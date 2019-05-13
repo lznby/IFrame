@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 自定义Toolbar布局 -->
+
+    <data>
+        <variable
+            name="toolbarVm"
+            type="com.lznby.base.widgets.IToolbar"/>
+        <!-- 在dataBinding表达式中如果使用其他类,需要在此导包 -->
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        app:toolbarBackgroundColor="@{toolbarVm.titleBackgroundColor}">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:onClick="@{toolbarVm.leftIconClick::doSomething}"
+            android:scaleType="center"
+            android:src="@mipmap/back_black"
+            android:visibility="@{toolbarVm.showLeftIcon ? View.VISIBLE : View.GONE}"
+            app:toolbarSrc="@{toolbarVm.leftIcon}"/>
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="@{toolbarVm.leftTextClick::doSomething}"
+            android:text="@{toolbarVm.leftText}"
+            android:visibility="@{toolbarVm.showLeftText ? View.VISIBLE : View.GONE}"
+            app:toolbarTextColor="@{toolbarVm.leftTextColor}"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{toolbarVm.title}"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:onClick="@{toolbarVm.rightTextClick::doSomething}"
+            android:text="@{toolbarVm.rightText}"
+            android:visibility="@{toolbarVm.showRightText ? View.VISIBLE : View.GONE}"
+            app:toolbarTextColor="@{toolbarVm.rightTextColor}"/>
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:onClick="@{toolbarVm.rightIconClick::doSomething}"
+            android:scaleType="center"
+            android:src="@mipmap/back_black"
+            android:visibility="@{toolbarVm.showRightIcon ? View.VISIBLE : View.GONE}"
+            app:toolbarSrc="@{toolbarVm.rightIcon}"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 没什么用,是为了让BaseActivity和BaseFragment中有BR.vm不至于报错 -->
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lznby.base.network.configure.InfoEntity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
+</layout>

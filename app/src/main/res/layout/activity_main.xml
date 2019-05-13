@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.lznby.frame.exmaple.ui.MainActivityVm"/>
+
+        <variable
+            name="toolbarVm"
+            type="com.lznby.base.widgets.IToolbar"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- include时使用dataBinding,app后的data名需要与include中保持一致 -->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:toolbarVm="@{toolbarVm}"/>
+
+        <!-- 外面一层是一个显示加载状态的方法 -->
+        <!-- 属性设置不一样的状态布局 -->
+        <com.lznby.base.widgets.loadingviwe.XLoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/xloading_empty_view"
+            app:errorView="@layout/error_main"
+            app:loadingView="@layout/xloading_loading_view"
+            app:noNetworkView="@layout/xloading_no_network_view"
+            app:xState="@{vm.state}"
+            app:xRetryClick="@{vm.setRetryClickListener}">
+
+            <TextView
+                android:text="我是内容"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </com.lznby.base.widgets.loadingviwe.XLoadingView>
+
+    </LinearLayout>
+
+</layout>

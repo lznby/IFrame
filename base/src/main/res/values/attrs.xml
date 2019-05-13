@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义控件可控制图片大小的TextView的属性 -->
+    <declare-styleable name="ImageTextView">
+        <attr name="drawableLeftWidth" format="dimension"/>
+        <attr name="drawableLeftHeight" format="dimension"/>
+        <attr name="drawableTopWidth" format="dimension"/>
+        <attr name="drawableTopHeight" format="dimension"/>
+        <attr name="drawableRightWidth" format="dimension"/>
+        <attr name="drawableRightHeight" format="dimension"/>
+        <attr name="drawableBottomWidth" format="dimension"/>
+        <attr name="drawableBottomHeight" format="dimension"/>
+    </declare-styleable>
+
+    <!-- 自定义控件XLoadingView的属性 -->
+    <declare-styleable name="XLoadingView">
+        <attr name="loadingView" format="reference" />
+        <attr name="errorView" format="reference" />
+        <attr name="emptyView" format="reference" />
+        <attr name="noNetworkView" format="reference" />
+    </declare-styleable>
+
+</resources>

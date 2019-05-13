@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.lznby.frame.exmaple.ui.MainActivityVm"/>
+
+        <variable
+            name="toolbarVm"
+            type="com.lznby.base.widgets.IToolbar"/>
+    </data>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 再次尝试按钮-id为xloading_retry -->
+        <TextView
+            android:id="@+id/xloading_retry"
+            android:text="测试属性"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</layout>
