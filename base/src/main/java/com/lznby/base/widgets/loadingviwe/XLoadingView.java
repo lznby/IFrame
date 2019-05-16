@@ -20,6 +20,8 @@ import java.util.Map;
  * @author Lznby
  *
  * 简单实用的页面状态统一管理 ，加载中、无网络、无数据、出错等状态的随意切换
+ *
+ * 在XFrame基础上拓展支持了DataBinding.
  */
 public class XLoadingView extends FrameLayout {
 
@@ -51,7 +53,7 @@ public class XLoadingView extends FrameLayout {
             throw new RuntimeException("content view can not be null");
         }
         ViewGroup parent = (ViewGroup) view.getParent();
-        if (view == null) {
+        if (parent == null) {
             throw new RuntimeException("parent view can not be null");
         }
         ViewGroup.LayoutParams lp = view.getLayoutParams();
