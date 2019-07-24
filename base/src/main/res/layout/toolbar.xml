@@ -47,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@{toolbarVm.title}"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            app:toolbarTextColor="@{toolbarVm.titleTextColor}"/>
 
         <TextView
             android:id="@+id/tv_right"
