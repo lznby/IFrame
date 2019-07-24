@@ -3,7 +3,6 @@ package com.lznby.base.network.configure;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -23,10 +22,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
      * 网络请求Api
      */
     public static Api api;
-    /**
-     * 全局Context
-     */
-    private static Context context;
 
     /**
      * Activity栈
@@ -36,8 +31,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
     @Override
     public void onCreate() {
         super.onCreate();
-
-        context = getApplicationContext();
 
         //Android 7.0 关于 FileUriExposedException 错误
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
@@ -51,15 +44,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
 
         //全局调用网络请求
         api = ApiUtils.INSTANCE.getApi(this);
-    }
-
-    /**
-     * 全局获取Context
-     *
-     * @return  全局Context
-     */
-    public static Context getContext() {
-        return context;
     }
 
     /**

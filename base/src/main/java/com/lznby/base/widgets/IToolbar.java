@@ -1,7 +1,9 @@
 package com.lznby.base.widgets;
 
 import android.databinding.BindingAdapter;
+import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
@@ -34,44 +36,44 @@ public class IToolbar {
     /**
      * 左侧字体颜色
      */
-    public ObservableField<Integer> leftTextColor = new ObservableField<>(R.color.colorAccent);
+    public ObservableInt leftTextColor = new ObservableInt(R.color.colorAccent);
     /**
      * 右侧字体颜色
      */
-    public ObservableField<Integer> rightTextColor = new ObservableField<>(R.color.colorAccent);
+    public ObservableInt rightTextColor = new ObservableInt(R.color.colorAccent);
     /**
      * 标题字体颜色
      */
-    public ObservableField<Integer> titleTextColor = new ObservableField<>(R.color.colorPrimary);
+    public ObservableInt titleTextColor = new ObservableInt(R.color.colorPrimary);
     /**
      * 背景颜色
      */
-    public ObservableField<Integer> titleBackgroundColor = new ObservableField<>(R.color.colorWhite);
+    public ObservableInt titleBackgroundColor = new ObservableInt(R.color.colorWhite);
     /**
      * 左侧图片资源地址(缺省值按自己实际情况配置)
      */
-    public ObservableField<Integer> leftIcon = new ObservableField<>(R.mipmap.back_black);
+    public ObservableInt leftIcon = new ObservableInt(R.mipmap.back_black);
     /**
      * 右侧图片资源地址(缺省值按自己实际情况配置)
      */
-    public ObservableField<Integer> rightIcon = new ObservableField<>(R.mipmap.back_black);
+    public ObservableInt rightIcon = new ObservableInt(R.mipmap.back_black);
 
     /**
      * 设置左侧图标显示隐藏
      */
-    public ObservableField<Boolean> showLeftIcon = new ObservableField<>(true);
+    public ObservableBoolean showLeftIcon = new ObservableBoolean(true);
     /**
      * 设置左侧文字显示隐藏
      */
-    public ObservableField<Boolean> showLeftText = new ObservableField<>(false);
+    public ObservableBoolean showLeftText = new ObservableBoolean(false);
     /**
      * 设置右侧图标显示隐藏
      */
-    public ObservableField<Boolean> showRightIcon = new ObservableField<>(true);
+    public ObservableBoolean showRightIcon = new ObservableBoolean(true);
     /**
      * 设置右侧文字显示隐藏
      */
-    public ObservableField<Boolean> showRightText = new ObservableField<>(true);
+    public ObservableBoolean showRightText = new ObservableBoolean(true);
 
     /**
      * 缺省的点击事件

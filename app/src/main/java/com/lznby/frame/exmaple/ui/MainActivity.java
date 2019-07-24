@@ -49,7 +49,8 @@ public class MainActivity extends BaseActivity<MainActivityVm,Object,ActivityMai
         toolbar.showRightIcon.set(false);
         toolbar.rightText.set("为空");
         toolbar.showRightText.set(true);
-        toolbar.rightTextColor.set(R.color.colorPrimary);
+//        toolbar.rightTextColor.set(R.color.colorPrimary);
+        toolbar.rightTextColor.set(R.color.colorAccent);
         toolbar.rightTextClick = view -> {
             viewModel.state.set(LoadingState.ERROR);
             toolbar.rightText.set("转变");

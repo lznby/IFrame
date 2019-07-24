@@ -1,6 +1,5 @@
 package com.lznby.base.base;
 
-import android.app.Application;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.databinding.DataBindingUtil;
@@ -13,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.android.databinding.library.baseAdapters.BR;
 
 import io.reactivex.disposables.Disposable;
@@ -48,7 +48,7 @@ public abstract class BaseFragment<VM extends BaseFragmentViewModel, K,Binding e
         // dataBinding方式设置布局
         binding = DataBindingUtil.inflate(inflater,setLayout(), container, false);
         // 配置ViewModel
-        viewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(getClazz());
+        viewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(null).create(getClazz());
         viewModel.setFragment(() -> this);
         // viewModel绑定LifecycleObserver(这样ViewModel中可以执行一些与生命周期有关的逻辑代码)
         this.getLifecycle().addObserver(viewModel);
@@ -78,13 +78,6 @@ public abstract class BaseFragment<VM extends BaseFragmentViewModel, K,Binding e
      * @return R.layout.xxx
      */
     public abstract @LayoutRes int setLayout();
-
-    /**
-     * 设置Application(注意:可以不用传值的,为空也行的)
-     *
-     * @return Application
-     */
-    public abstract Application getApplication();
 
     /**
      * 获取ViewModel的class,即VM.class

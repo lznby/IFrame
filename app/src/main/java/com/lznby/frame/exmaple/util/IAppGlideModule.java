@@ -1,4 +1,4 @@
-package com.lznby.base.utils;
+package com.lznby.frame.exmaple.util;
 
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
